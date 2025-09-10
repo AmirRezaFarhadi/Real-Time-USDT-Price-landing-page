@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>InfinityBot — USDT Price Feed</title>
+    <style>
+        :root {
+            --text: #eaeefc;
+            --muted: #9aa6c6;
+            --shadow: 0 12px 28px rgba(0, 0, 0, .45);
+            --radius: 22px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Dark animated gradient background */
+        .bg-anim {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(-45deg, #0b0f1a, #121828, #1a1f2e, #0e141f);
+            background-size: 300% 300%;
+            animation: gradientMove 20s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            max-width: 1100px;
+            width: 92%;
+            box-shadow: var(--shadow);
+            margin: 40px auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 24px;
+            background: linear-gradient(135deg, #ddd, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            margin-left: 24px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 6vw, 52px);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin-bottom: 26px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, #2c2f36, #3a3f47);
+            color: #f0f0f0;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .features {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        @media(min-width:900px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .05);
+            backdrop-filter: blur(14px);
+            border-radius: var(--radius);
+            padding: 26px;
+            text-align: center;
+            transition: .3s;
+            box-shadow: var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 14px;
+            fill: url(#grad-light);
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, .4));
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 14px;
+        }
+
+        .about p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            background: linear-gradient(135deg, #555, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-anim"></div>
+    <div class="container">
+        <header>
+            <div class="logo">InfinityBot</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>InfinityBot — Real-Time USDT Price Feed</h1>
+            <p>Powered by Bit24, InfinityBot delivers the live Tether (USDT) rate directly to your Telegram channel —
+                simple, fast, and always accurate.</p>
+            <button class="btn"> <a href="https://t.me/Gheymatlahzeee" style="color:white">View on Telegram</a></button>
+        </section>
+
+        <section id="features" class="features">
+            <div class="card">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <defs>
+                        <linearGradient id="grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f0f4ff" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" />
+                </svg>
+                <h3>Trusted Source</h3>
+                <p>InfinityBot fetches rates directly from Bit24, one of Iran’s most reliable exchanges.</p>
+            </div>
+            <div class="card">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 1a11 11 0 100 22 11 11 0 000-22zm1 17h-2v-2h2v2zm0-4h-2V6h2v8z" />
+                </svg>
+                <h3>Focused on Tether</h3>
+                <p>Specialized in tracking USDT — the stablecoin that matters most in daily trades.</p>
+            </div>
+            <div class="card">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
+                </svg>
+                <h3>Instant Telegram Updates</h3>
+                <p>Get the latest price right inside your Telegram channel. No clutter, no extra apps.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Why InfinityBot?</h2>
+            <p>
+                In a market where every second matters, InfinityBot keeps things simple.
+                No noise, no overload — just the live USDT price from Bit24, delivered straight to Telegram.
+                Perfect for traders, investors, and anyone who needs a reliable reference.
+            </p>
+        </section>
+
+        <footer>
+            © <span id="year"></span> InfinityBot. Real-time prices, directly to Telegram.<br />
+            Designed & Developed by <a href="https://t.me/Mr_programmer00" target="_blank">AmirFarhadi</a>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
