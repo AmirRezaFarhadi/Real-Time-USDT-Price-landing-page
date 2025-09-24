@@ -53,9 +53,5 @@ Add multi-language support.
 
 Pull requests are welcome! Please open an issue first to discuss what you would like to change.
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
 © 2025 InfinityBot. Real-time prices, directly to Telegram.
 Designed & Developed by <a href="https://t.me/Mr_programmer00">AmirRezaFarhadi</a>
